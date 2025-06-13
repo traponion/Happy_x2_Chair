@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy x2 Chair</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>
+                <span class="title-icon">🪑</span>
+                Happy x2 Chair
+                <span class="title-icon">✨</span>
+            </h1>
+            <div class="game-info">
+                <div class="turn-counter">ターン: <span id="turn-count">1</span></div>
+                <div class="score">スコア: <span id="score">0</span></div>
+                <div class="wave-info">
+                    <div class="current-wave" id="current-wave">平穏フェーズ</div>
+                    <div class="wave-progress" id="wave-progress">残り: 9枚</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-board">
+            <div class="restaurant-area">
+                <div class="seats-container">
+                    <div class="counter-section">
+                        <h3>カウンター席 (6人)</h3>
+                        <div class="counter-seat drop-zone" id="counter-seat" data-seat-type="counter">
+                            <div class="seat-capacity">0/6人</div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-section">
+                        <h3>テーブル席</h3>
+                        <div class="tables-grid">
+                            <div class="table-seat table-4 drop-zone" id="table-4-1" data-seat-type="table" data-capacity="4">
+                                <div class="table-label">4人席A</div>
+                                <div class="seat-status">空席</div>
+                            </div>
+                            <div class="table-seat table-4 drop-zone" id="table-4-2" data-seat-type="table" data-capacity="4">
+                                <div class="table-label">4人席B</div>
+                                <div class="seat-status">空席</div>
+                            </div>
+                            <div class="table-seat table-4 drop-zone" id="table-4-3" data-seat-type="table" data-capacity="4">
+                                <div class="table-label">4人席C</div>
+                                <div class="seat-status">空席</div>
+                            </div>
+                            <div class="table-seat table-4 drop-zone" id="table-4-4" data-seat-type="table" data-capacity="4">
+                                <div class="table-label">4人席D</div>
+                                <div class="seat-status">空席</div>
+                            </div>
+                            <div class="table-seat table-2 drop-zone" id="table-2-1" data-seat-type="table" data-capacity="2">
+                                <div class="table-label">2人席A</div>
+                                <div class="seat-status">空席</div>
+                            </div>
+                            <div class="table-seat table-2 drop-zone" id="table-2-2" data-seat-type="table" data-capacity="2">
+                                <div class="table-label">2人席B</div>
+                                <div class="seat-status">空席</div>
+                            </div>
+                            <div class="table-seat table-2 drop-zone" id="table-2-3" data-seat-type="table" data-capacity="2">
+                                <div class="table-label">2人席C</div>
+                                <div class="seat-status">空席</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="waiting-area">
+                <div class="waiting-queue">
+                    <h3>待機列</h3>
+                    <div class="queue-slots">
+                        <div class="queue-slot" id="queue-1">空</div>
+                        <div class="queue-slot" id="queue-2">空</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button id="new-game" class="btn-secondary">新しいゲーム</button>
+        </div>
+
+    </div>
+
+    <div class="game-over-modal" id="game-over" style="display: none;">
+        <div class="modal-content">
+            <h2>ゲームオーバー</h2>
+            <p>最終スコア: <span id="final-score">0</span>ターン</p>
+            <button id="restart-game" class="btn-primary">もう一度プレイ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
